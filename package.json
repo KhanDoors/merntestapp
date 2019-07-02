@@ -1,0 +1,22 @@
+{
+  "name": "merntestapp",
+  "version": "1.0.0",
+  "description": "MERN Test App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KhanDoors/merntestapp.git"
+  },
+  "author": "Syyad Khan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KhanDoors/merntestapp/issues"
+  },
+  "homepage": "https://github.com/KhanDoors/merntestapp#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

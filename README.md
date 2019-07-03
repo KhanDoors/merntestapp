@@ -23,7 +23,7 @@ Requiring an NPM package in our app:
 
 const express = require("express");
 
-# Express
+# Express (https://expressjs.com/)
 
 Basic Server:
 
@@ -39,8 +39,19 @@ app.post("/", (req, res) => {
 res.send(" post message test");
 });
 
-const PORT = 4000;
+const port = process.env.PORT || 4000;
 
-app.listen(PORT, () => {
-console.log(`App Running on port ${PORT} ...`);
+app.listen(port, () => {
+console.log(`App Running on Port ${port} ...`);
 });
+
+                                            Express Middleware Stack
+
+1. Order matters they are executed in the order they are entered.
+   app.use()
+   express.json() - (Body Parser)
+
+
+                                             Routes
+
+                                             Models

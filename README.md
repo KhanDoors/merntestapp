@@ -48,6 +48,7 @@ console.log(`App Running on Port ${port} ...`);
                                             Express Middleware Stack
 
 1. Order matters they are executed in the order they are entered.
+
    app.use()
    express.json() - (Body Parser)
 

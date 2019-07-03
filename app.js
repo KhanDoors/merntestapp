@@ -10,7 +10,8 @@ app.post("/", (req, res) => {
   res.send(" post message test");
 });
 
-const PORT = 4000;
-app.listen(PORT, () => {
-  console.log(`App Running on Port ${PORT} ...`);
+const port = process.env.PORT || 4000;
+
+app.listen(port, () => {
+  console.log(`App Running on Port ${port} ...`);
 });

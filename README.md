@@ -23,15 +23,15 @@ Node.JS is a single thread synchronous process. Therefore we must use callbacks 
 
 Common Packages:
 
-"dependencies":
-{
+     "dependencies":
+     {
 
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.6.2"
 
-},
+     },
 
 Requiring an NPM package in our app:
 
@@ -41,50 +41,60 @@ const express = require("express");
 
 Basic Server:
 
-const express = require("express");
+      const express = require("express");
 
-const app = express();
+      const app = express();
 
-app.get("/", (req, res) => {
+      app.get("/", (req, res) => {
 
-res.status(200).json({ message: "Hello from the server!", app: "MERN Test" });
+      res.status(200).json({ message: "Hello from the server!", app: "MERN Test" });
 
-});
+      });
 
-app.post("/", (req, res) => {
+      app.post("/", (req, res) => {
 
-res.send(" post message test");
+      res.send(" post message test");
 
-});
+      });
 
-const PORT = 4000;
+      const PORT = 4000;
 
-app.listen(PORT, () => {
+      app.listen(PORT, () => {
 
-console.log(`App Running on port ${PORT} ...`);
+      console.log(`App Running on port ${PORT} ...`);
 
-});
+      });
 
 ### Express Middleware Stack
 
-1. Order matters they are executed in the order they are entered.
-   app.use()
-   express.json() - (Body Parser)
+1.  Order matters they are executed in the order they are entered.
+
+        app.use()
+        express.json() - (Body Parser)
 
 ## MongoDB (https://cloud.mongodb.com)
+
+There is very little to do with the MongoDB:
+
+1.  get connection string from MongoDB site and set in the dotenv file.
+
+         MONGO_URI = 'connection string'
+
+2.  Import the .env file to the app.js file.
+
+        const uri = process.env.MONGO_URI;
+
+Mongoose will take care of the rest of the MongoDB code.
 
 ## Mongoose (https://mongoosejs.com)
 
 Connection:
-get connection string from MongoDB site and set in the dotenv file.
 
-const uri = process.env.MONGO_URI;
-
-mongoose
-.connect(uri, {
-useNewUrlParser: true,
-useCreateIndex: true,
-useFindAndModify: false
-})
-.then(() => console.log("Mongo Connected"))
-.catch(err => console.log(err));
+    mongoose
+    .connect(uri, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+    })
+    .then(() => console.log("Mongo Connected"))
+    .catch(err => console.log(err));

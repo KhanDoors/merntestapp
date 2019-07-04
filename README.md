@@ -8,13 +8,16 @@ Node.JS is a single thread synchronous process. Therefore we must use callbacks 
 ## NPM Packages:
 
 npm Init - to create package.json file.
+
 npm install for regular dependencies (--save deprecated)
+
 npm i --save-dev or (-D) for development dependencies
+
 npm i nodemon --global (install globally, across your machine)
 
 npm uninstall nodemon (deletes a package)
 
-common Packages:
+Common Packages:
 
 "dependencies":
 {

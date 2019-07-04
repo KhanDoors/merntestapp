@@ -1,15 +1,15 @@
 # MERN Stack 2019
 
-ES6, Mongo Atlas React Hooks
+ES6, Mongo Atlas and React Hooks
 
-## Node.JS
+## Node.JS (https://nodejs.org/en/)
 
-Allows JavaScript to be written on the server as opposed to written in the browser.
+NodeJS allows JavaScript to be written on the server as opposed to written in the browser.
 Synchronous -> Blocking IO
 Asynchronous -> Non-Blocking IO
 Node.JS is a single thread synchronous process. Therefore we must use callbacks in order to achieve an asynchronous non-blocking process (not technically asynchronous but feels that way). This can lead to 'Callback Hell', identified by the flying 'V' formation, if not written properly. We use Promises and/or Async/Await to avoid 'Callback Hell'.
 
-### NPM Packages:
+### NPM (https://www.npmjs.com/) Packages:
 
 'npm Init' - to create package.json file.
 

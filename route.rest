@@ -1,0 +1,16 @@
+GET http://localhost:4000/
+
+###
+GET http://localhost:4000/users
+
+###
+GET http://localhost:4000/users/5d1fc74efe286525246a9d74
+
+###
+POST http://localhost:4000/users
+Content-Type: application/json
+
+{
+    "username": "Jim Morrison"
+}
+

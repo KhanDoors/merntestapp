@@ -21,12 +21,14 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "Hello from the server!", app: "MERN Test" });
 });
 
-app.post("/", (req, res) => {
-  res.send(" post message test");
-});
-
 app.use(cors());
 app.use(express.json());
+
+const exercisesRouter = require("./routes/exercises");
+const usersRouter = require("./routes/users");
+
+app.use("/users", usersRouter);
+app.use("/exercises", exercisesRouter);
 
 const port = process.env.PORT || 4000;
 

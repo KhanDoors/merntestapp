@@ -57,9 +57,9 @@ Basic Server:
 
       });
 
-      const PORT = 4000;
+      const port = process.env.PORT || 4000;
 
-      app.listen(PORT, () => {
+      app.listen(port, () => {
 
       console.log(`App Running on port ${PORT} ...`);
 
@@ -69,8 +69,10 @@ Basic Server:
 
 1.  Order matters they are executed in the order they are entered.
 
-        app.use()
-        express.json() - (Body Parser)
+        app.use(cors());
+        app.use(express.json())- (Body Parser)
+        app.use("/users", usersRouter);
+        app.use("/exercises", exercisesRouter);
 
 ## MongoDB (https://cloud.mongodb.com)
 
@@ -89,6 +91,11 @@ Mongoose will take care of the rest of the MongoDB code.
 ## Mongoose (https://mongoosejs.com)
 
 Connection:
+get connection string from MongoDB site and set in the dotenv file.
+
+     const uri = process.env.MONGO_URI;
+
+Connection:
 
     mongoose
     .connect(uri, {
@@ -98,3 +105,33 @@ Connection:
     })
     .then(() => console.log("Mongo Connected"))
     .catch(err => console.log(err));
+
+Implementing CRUD functionality is a 3 step process with Mongoose
+
+1.  set models for each collection
+    i.e.
+
+           const mongoose = require("mongoose");
+
+        		const userSchema = new mongoose.Schema({
+        		  username: {
+        			type: String,
+        			required: true,
+        			unique: true,
+        			trim: true,
+        			minlength: 3
+        		  }
+        		});
+
+        		module.exports = mongoose.model("User", userSchema);
+
+2.  import Models into Routes and make routes:
+
+3.  Require and use routes in the server.js:
+
+
+        const exercisesRouter = require("./routes/exercises");
+        const usersRouter = require("./routes/users");
+
+        app.use("/users", usersRouter);
+        app.use("/exercises", exercisesRouter);

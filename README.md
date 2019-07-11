@@ -106,9 +106,9 @@ Connection:
     .then(() => console.log("Mongo Connected"))
     .catch(err => console.log(err));
 
-Implementing CRUD functionality is a 3 step process with Mongoose
+Implementing CRUD functionality is a 3 step process with Mongoose / Express
 
-1.  set models for each collection
+1.  set Mongoose models for each collection
     i.e.
 
            const mongoose = require("mongoose");
@@ -125,7 +125,7 @@ Implementing CRUD functionality is a 3 step process with Mongoose
 
         		module.exports = mongoose.model("User", userSchema);
 
-2.  import Models into Routes and make routes:
+2.  import Mongoose Models into Routes and make Express routes:
 
         const express = require("express");
         const router = express.Router();

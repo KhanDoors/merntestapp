@@ -30,8 +30,8 @@ const usersRouter = require("./routes/users");
 app.use("/users", usersRouter);
 app.use("/exercises", exercisesRouter);
 
-const port = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4000;
 
-app.listen(port, () => {
-  console.log(`App Running on Port ${port} ...`);
+app.listen(PORT, () => {
+  console.log(`App Running on Port ${PORT} ...`);
 });

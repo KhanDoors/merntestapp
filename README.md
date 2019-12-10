@@ -32,6 +32,10 @@ Common Packages:
     "mongoose": "^5.6.2"
 
      },
+    "devDependencies": {
+    "nodemon": "^2.0.1"
+
+}
 
 Requiring an NPM package in our app:
 

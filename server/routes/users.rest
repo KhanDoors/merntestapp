@@ -2,7 +2,7 @@ GET http://localhost:4000/users
 
 ###
 
-GET http://localhost:4000/users/5d272e4f2f7ce03fe41bc108
+GET http://localhost:4000/users/5df1890d1fb9b64734889597
 
 ###
 
@@ -15,7 +15,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:4000/users/5df1899fa644194110cbddcb
+DELETE http://localhost:4000/users/5df18779c78bfd2610543b8f
 
 ###
 
@@ -23,5 +23,5 @@ PATCH http://localhost:4000/users/5df1890d1fb9b64734889597
 Content-Type: application/json
 
 {
-"username": "Andre Giant"   
+"username": "Andre the Giant"   
 }

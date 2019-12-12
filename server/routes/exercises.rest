@@ -2,5 +2,30 @@ GET http://localhost:4000/exercises
 
 ###
 
-GET http://localhost:4000/exercises/12
+GET http://localhost:4000/exercises/5df27d5d360784663424d125
 
+###
+
+
+POST http://localhost:4000/exercises
+Content-Type: application/json
+
+{
+ "username": "Mike Jordan",
+ "description": "basketball",
+ "duration": 120
+}
+
+###
+
+DELETE http://localhost:4000/exercises/5df27a1d360784663424d124
+
+###
+
+
+PATCH http://localhost:4000/exercises/5df28126c6a9cf4ee8660f97
+Content-Type: application/json
+
+{ 
+  "username": "Michael Jordan"
+}

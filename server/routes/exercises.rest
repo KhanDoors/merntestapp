@@ -6,7 +6,6 @@ GET http://localhost:4000/exercises/5df27d5d360784663424d125
 
 ###
 
-
 POST http://localhost:4000/exercises
 Content-Type: application/json
 
@@ -18,14 +17,13 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:4000/exercises/5df27a1d360784663424d124
+DELETE http://localhost:4000/exercises/5df28126c6a9cf4ee8660f97
 
 ###
 
-
-PATCH http://localhost:4000/exercises/5df28126c6a9cf4ee8660f97
+PATCH http://localhost:4000/exercises/5df281e9a2ff9c508891862a
 Content-Type: application/json
 
 { 
-  "username": "Michael Jordan"
+   "description": "Basketball Star"
 }

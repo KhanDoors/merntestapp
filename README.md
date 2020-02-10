@@ -2,6 +2,8 @@
 
 ES6, Mongo Atlas, Express.js, Node.js and React Hooks
 
+## The Backend
+
 ## Node.JS (https://nodejs.org/en/)
 
 NodeJS allows JavaScript to be written on the server as opposed to written in the browser.
@@ -216,3 +218,5 @@ Test routes using tester of choice such as Postman, Insomnia or in this case, th
 https://dev.to/techwatching/testing-your-api-with-rest-client-h23
 
 https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+## The Frontend

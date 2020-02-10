@@ -74,7 +74,7 @@ Basic Server:
 1.  Order matters they are executed in the order they are entered.
 
         app.use(cors());
-        app.use(express.json())- (Body Parser)
+        app.use(express.json()) - (Body Parser now included)
         app.use("/users", usersRouter);
         app.use("/exercises", exercisesRouter);
 
@@ -202,7 +202,7 @@ Implementing CRUD functionality is a 3 step process with Mongoose / Express
 
         module.exports = router;
 
-3)  Require and use routes in the server.js:
+3.  Require and use routes in the server.js:
 
 
         const exercisesRouter = require("./routes/exercises");

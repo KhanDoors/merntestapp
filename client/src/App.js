@@ -5,7 +5,7 @@ import Exercises from "./components/exercise/Exercises";
 import ExerciseForm from "./components/exercise/ExerciseForm";
 import Home from "./components/core/Home";
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Switch>
@@ -15,6 +15,6 @@ function App() {
       </Switch>
     </Router>
   );
-}
+};
 
 export default App;

@@ -210,3 +210,5 @@ Implementing CRUD functionality is a 3 step process with Mongoose / Express
 
         app.use("/users", usersRouter);
         app.use("/exercises", exercisesRouter);
+
+4. Test routes using tester of choice such as Postman, Insomnia or in this case, the VS code plugin 'REST Client'. This allows you to stay in your code editor to test routes.

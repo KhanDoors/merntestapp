@@ -2,7 +2,7 @@
 
 ES6, Mongo Atlas, Express.js, Node.js and React Hooks
 
-## The Backend
+## **_The Backend_**
 
 ## Node.JS (https://nodejs.org/en/)
 
@@ -219,4 +219,4 @@ https://dev.to/techwatching/testing-your-api-with-rest-client-h23
 
 https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
-## The Frontend
+## **_The Frontend_**

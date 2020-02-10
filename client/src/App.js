@@ -1,11 +1,19 @@
 import React from "react";
 import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Exercises from "./components/exercise/Exercises";
+import ExerciseForm from "./components/exercise/ExerciseForm";
+import Home from "./components/core/Home";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Mern Test App</h1>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/exercises" component={Exercises} />
+        <Route exact path="/exerciseform" component={ExerciseForm} />
+      </Switch>
+    </Router>
   );
 }
 

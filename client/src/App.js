@@ -11,19 +11,22 @@ import ExerciseForm from "./components/exercise/ExerciseForm";
 import Home from "./components/pages/Home";
 import Navbar from "./components/layouts/Navbar";
 import Footer from "./components/layouts/Footer";
+import ExerciseContextProvider from "./contexts/ExerciseContext";
 
 const App = () => {
   return (
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/exercises" component={Exercises} />
-        <Route exact path="/exerciseform" component={ExerciseForm} />
-        <Redirect to="/" />
-      </Switch>
-      <Footer />
-    </Router>
+    <ExerciseContextProvider>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/exercises" component={Exercises} />
+          <Route exact path="/exerciseform" component={ExerciseForm} />
+          <Redirect to="/" />
+        </Switch>
+        <Footer />
+      </Router>
+    </ExerciseContextProvider>
   );
 };
 

@@ -1,19 +1,29 @@
 import React, { Fragment, useState, useContext } from "react";
 import Exercise from "./Exercise";
-import ExerciseForm from "./ExerciseForm";
 import Grid from "@material-ui/core/Grid";
 import { ExerciseContext } from "./../../contexts/ExerciseContext";
+import Typography from "@material-ui/core/Typography";
 
 const Exercises = () => {
-  const [exercises, setExercises] = useState([]);
+  const { exercises } = useContext(ExerciseContext);
+
   return (
     <Fragment>
-      <Grid container alignItems="center" justify="center" spacing={12}>
-        <Grid item>
-          <h1>Exercise Library</h1>
-          <Exercise />
-          <ExerciseForm />
-        </Grid>
+      <Grid
+        style={{ marginBottom: "1em", marginTop: "1em" }}
+        container
+        justify="center"
+      >
+        <Typography variant="h3">Exercise Library</Typography>
+      </Grid>
+      <Grid container justify="center" spacing={10}>
+        {exercises.map(exercise => {
+          return (
+            <Grid key={exercise.id} item>
+              <Exercise exercise={exercise} />
+            </Grid>
+          );
+        })}
       </Grid>
     </Fragment>
   );

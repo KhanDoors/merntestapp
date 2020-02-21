@@ -10,20 +10,21 @@ POST http://localhost:4000/exercises
 Content-Type: application/json
 
 {
- "username": "Mike Jordan",
- "description": "basketball",
+ "name": "Squats",
+ "url": "https://www.gymvisual.com/1613-large_default/3-4-sit-up.jpg",
+ "description": "The squat lift exercise is arguably one of the best overall weightlifting exercises for building lower body and leg power and strength. Because this is a compound exercise that engages multiple muscles and joints at once, it takes some instruction and practice to master safely.1﻿ If just beginning, work with a trainer to learn proper technique. You can use the squat as part of a strength workout, especially for the lower body.",
  "duration": 120
 }
 
 ###
 
-DELETE http://localhost:4000/exercises/5df28126c6a9cf4ee8660f97
+DELETE http://localhost:4000/exercises/5df281e9a2ff9c508891862a
 
 ###
 
-PATCH http://localhost:4000/exercises/5df281e9a2ff9c508891862a
+PATCH http://localhost:4000/exercises/5e4fe68dc6a82203e8af3cde
 Content-Type: application/json
 
 { 
-   "description": "Basketball Star"
+   "description": "The bench press builds the muscles of the chest as well as the triceps of the back of the arms and the front deltoid shoulder muscles. You can do this exercise with barbells, dumbbells, or with a Smith machine, which constrains the path of the barbell and makes the exercise a little easier. You will often learn the bench press in a strength training program. Beginners should try lifts without weight on the bar to warm up, get a feel for the bar, and learn to do it with good form. You can use it regularly as part of an upper body workout for strength and muscle development."
 }

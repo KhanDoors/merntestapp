@@ -20,7 +20,8 @@ router.get("/:id", getExercise, (req, res) => {
 // Create One
 router.post("/", async (req, res) => {
   const exercise = new Exercise({
-    username: req.body.username,
+    name: req.body.name,
+    url: req.body.url,
     description: req.body.description,
     duration: req.body.duration
   });
@@ -34,8 +35,11 @@ router.post("/", async (req, res) => {
 
 // Updating One
 router.patch("/:id", getExercise, async (req, res) => {
-  if (req.body.username != null) {
-    res.exercise.username = req.body.username;
+  if (req.body.name != null) {
+    res.exercise.name = req.body.name;
+  }
+  if (req.body.url != null) {
+    res.exercise.url = req.body.url;
   }
   if (req.body.description != null) {
     res.exercise.description = req.body.description;

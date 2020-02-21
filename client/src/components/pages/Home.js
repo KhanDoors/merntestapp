@@ -10,9 +10,6 @@ const Home = () => {
       <Grid container alignItems="center" justify="center" spacing={12}>
         <Grid item>
           <h1>Home</h1>
-          <Link to="/exercises">
-            <button>Exercises</button>
-          </Link>
           <p>{exercises.length}</p>
         </Grid>
       </Grid>

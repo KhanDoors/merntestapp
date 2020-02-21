@@ -25,21 +25,23 @@ export default function Exercise() {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image="https://ak1.picdn.net/shutterstock/videos/33735811/thumb/1.jpg"
           title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Exercise
+            Bench Press
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus
-            veniam dolorum at delectus, a corporis dolore eius molestias quam
-            odit. Cumque laboriosam ratione atque debitis? Nam doloremque aut
-            incidunt provident.Tempore corrupti autem recusandae mollitia iusto
-            ullam error eveniet repellat officiis, ipsa nostrum voluptas,
-            expedita soluta libero culpa cumque unde similique doloribus, fugiat
-            quo a. Blanditiis, eaque nihil! Commodi, molestiae.
+            The bench press builds the muscles of the chest as well as the
+            triceps of the back of the arms and the front deltoid shoulder
+            muscles. You can do this exercise with barbells, dumbbells, or with
+            a Smith machine, which constrains the path of the barbell and makes
+            the exercise a little easier. You will often learn the bench press
+            in a strength training program. Beginners should try lifts without
+            weight on the bar to warm up, get a feel for the bar, and learn to
+            do it with good form. You can use it regularly as part of an upper
+            body workout for strength and muscle development.
           </Typography>
         </CardContent>
       </CardActionArea>

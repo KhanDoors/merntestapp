@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { Fragment, useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -7,6 +7,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import ExerciseForm from "./ExerciseForm";
 
 const useStyles = makeStyles({
   root: {
@@ -19,23 +20,20 @@ const useStyles = makeStyles({
 });
 
 export default function Exercise({ exercise }) {
+  const { name, url, description, duration } = exercise;
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={exercise.url}
-          title={exercise.name}
-        />
+        <CardMedia className={classes.media} image={url} title={name} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            <strong>{exercise.name}</strong>
-            <p style={{ fontSize: "15px" }}>Reps: {exercise.duration}</p>
+            <strong>{name}</strong>
+            <p style={{ fontSize: "15px" }}>Reps: {duration}</p>
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {exercise.description}
+            {description}
           </Typography>
         </CardContent>
       </CardActionArea>

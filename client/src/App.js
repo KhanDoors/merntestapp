@@ -7,6 +7,7 @@ import {
   Redirect
 } from "react-router-dom";
 import Exercises from "./components/exercise/Exercises";
+import Exercise from "./components/exercise/Exercise";
 import ExerciseForm from "./components/exercise/ExerciseForm";
 import Home from "./components/pages/Home";
 import Navbar from "./components/layouts/Navbar";
@@ -22,6 +23,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/exercises" component={Exercises} />
           <Route exact path="/exerciseform" component={ExerciseForm} />
+          <Route exact path="/exercise/:id" component={Exercise} />
           <Redirect to="/" />
         </Switch>
         <Footer />

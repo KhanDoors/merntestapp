@@ -19,7 +19,7 @@ const Exercises = () => {
       <Grid container justify="center" spacing={10}>
         {exercises.map(exercise => {
           return (
-            <Grid key={exercise.id} item>
+            <Grid item key={exercise.id}>
               <Exercise exercise={exercise} />
             </Grid>
           );

@@ -10,11 +10,11 @@ const Home = () => {
   return (
     <Fragment>
       <Grid container alignItems="center" justify="center" spacing={10}>
-        <Grid item style={{ marginBottom: "2em" }}>
-          <Exercises />
-        </Grid>
         <Grid>
           <ExerciseForm />
+        </Grid>
+        <Grid item style={{ marginBottom: "2em" }}>
+          <Exercises />
         </Grid>
       </Grid>
     </Fragment>

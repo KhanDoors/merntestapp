@@ -6,7 +6,6 @@ import { Link, withRouter } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 
 function Navbar({ match }) {
-  console.log(match.url);
   return (
     <div>
       <AppBar position="static" color="secondary">

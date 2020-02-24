@@ -32,6 +32,16 @@ const ExerciseContextProvider = props => {
     }
   };
 
+  // const deleteExercises = async (_id) => {
+  //   try {
+  //     const res = await axios
+  //       .delete("http://localhost:4000/exercises/${_id}")
+  //       .then(res => setExercises(res.data));
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+
   return (
     <ExerciseContext.Provider value={{ exercises, getExercises, addExercises }}>
       {props.children}

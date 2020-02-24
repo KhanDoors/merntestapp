@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
 const ExerciseForm = () => {
   const classes = useStyles();
 
-  const { addExercise } = useContext(ExerciseContext);
+  const { addExercises } = useContext(ExerciseContext);
 
   const [exercise, setExercise] = useState({
     name: "",
@@ -34,7 +34,7 @@ const ExerciseForm = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    addExercise(exercise);
+    addExercises(exercise);
     setExercise({
       name: "",
       url: "",
@@ -48,49 +48,36 @@ const ExerciseForm = () => {
       <Typography style={{ marginBottom: ".5em" }} variant="h2">
         Add Exercise
       </Typography>
-      <form
-        className={classes.root}
-        noValidate
-        autoComplete="off"
-        onSubmit={onSubmit}
-      >
-        <TextField
-          id="outlined-basic"
-          label="Name"
-          variant="outlined"
+      <form onSubmit={onSubmit}>
+        <input
+          itemType="text"
+          placeholder="Name"
           name="name"
           value={name}
           onChange={onChange}
         />
-        <TextField
-          id="outlined-basic"
-          label="Url"
-          variant="outlined"
+        <input
+          itemType="url"
+          placeholder="Url"
           name="url"
           value={url}
           onChange={onChange}
         />
-        <TextField
-          id="outlined-basic"
-          label="Description"
-          variant="outlined"
+        <input
+          itemType="text"
+          placeholder="Description"
           name="description"
           value={description}
           onChange={onChange}
         />
-        <TextField
-          id="outlined-basic"
-          label="Duration"
-          variant="outlined"
+        <input
+          itemType="text"
+          placeholder="Duration"
           name="duration"
           value={duration}
           onChange={onChange}
         />
-        <Container maxWidth="sm">
-          <Button size="large" variant="contained" color="secondary">
-            Submit
-          </Button>
-        </Container>
+        <input type="submit" value="Add Contact" />
       </form>
     </Fragment>
   );

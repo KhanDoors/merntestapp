@@ -9,7 +9,7 @@ const Home = () => {
   const { exercises } = useContext(ExerciseContext);
   return (
     <Fragment>
-      <Grid container alignItems="center" justify="center" spacing={12}>
+      <Grid container alignItems="center" justify="center" spacing={10}>
         <Grid item style={{ marginBottom: "2em" }}>
           <Exercises />
         </Grid>

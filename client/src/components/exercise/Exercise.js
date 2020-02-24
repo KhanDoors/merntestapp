@@ -7,7 +7,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import ExerciseForm from "./ExerciseForm";
+import { ExerciseContext } from "./../../contexts/ExerciseContext";
 
 const useStyles = makeStyles({
   root: {
@@ -20,8 +20,15 @@ const useStyles = makeStyles({
 });
 
 export default function Exercise({ exercise }) {
-  const { name, url, description, duration } = exercise;
   const classes = useStyles();
+
+  const { name, url, description, duration, _id } = exercise;
+
+  const { deleteExercises } = useContext(ExerciseContext);
+
+  const onDelete = () => {
+    deleteExercises(_id);
+  };
 
   return (
     <Card className={classes.root}>
@@ -41,7 +48,7 @@ export default function Exercise({ exercise }) {
         <Button size="small" color="primary">
           Edit
         </Button>
-        <Button size="small" color="secondary">
+        <Button onClick={onDelete} size="small" color="secondary">
           Delete
         </Button>
       </CardActions>

@@ -40,7 +40,7 @@ const ExerciseForm = () => {
         duration: ""
       });
     }
-  }, [ExerciseContext, current]);
+  }, [current]);
 
   const { name, url, description, duration } = exercise;
 
@@ -51,8 +51,9 @@ const ExerciseForm = () => {
     e.preventDefault();
     if (current === null) {
       addExercises(exercise);
+    } else {
+      updateExercises(exercise);
     }
-    updateExercises(exercise);
     setExercise({
       name: "",
       url: "",
@@ -64,7 +65,7 @@ const ExerciseForm = () => {
   return (
     <Fragment>
       <Typography style={{ marginBottom: ".5em" }} variant="h2">
-        {current === null ? "Add Exercise" : "Edit Exercise"}
+        {current ? "Edit Exercise" : "Add Exercise"}
       </Typography>
       <form onSubmit={onSubmit}>
         <input
@@ -97,7 +98,7 @@ const ExerciseForm = () => {
         />
         <input
           type="submit"
-          value={current === null ? "Add Exercise" : "Edit Exercise"}
+          value={current ? "Edit Exercise" : "Add Exercise"}
         />
       </form>
     </Fragment>

@@ -57,7 +57,7 @@ const ExerciseContextProvider = props => {
           exercise,
           config
         )
-        .then(res => console.log(res.data));
+        .then(res => res.data);
     } catch (err) {
       console.log(err);
     }

@@ -77,7 +77,7 @@ const ExerciseForm = () => {
           value={duration}
           onChange={onChange}
         />
-        <input type="submit" value="Add Contact" />
+        <input type="submit" value="Add Exercise" />
       </form>
     </Fragment>
   );

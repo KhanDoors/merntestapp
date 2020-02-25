@@ -24,10 +24,13 @@ export default function Exercise({ exercise }) {
 
   const { name, url, description, duration, _id } = exercise;
 
-  const { deleteExercises } = useContext(ExerciseContext);
+  const { deleteExercises, getCurrent, clearCurrent } = useContext(
+    ExerciseContext
+  );
 
   const onDelete = () => {
     deleteExercises(_id);
+    clearCurrent();
   };
 
   return (
@@ -45,7 +48,11 @@ export default function Exercise({ exercise }) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button
+          onClick={() => getCurrent(exercise)}
+          size="small"
+          color="primary"
+        >
           Edit
         </Button>
         <Button onClick={onDelete} size="small" color="secondary">

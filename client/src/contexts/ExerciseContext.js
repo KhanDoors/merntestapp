@@ -5,6 +5,7 @@ export const ExerciseContext = createContext();
 
 const ExerciseContextProvider = props => {
   const [exercises, setExercises] = useState([]);
+  const [current, setCurrent] = useState(null);
 
   const getExercises = async () => {
     try {
@@ -42,9 +43,25 @@ const ExerciseContextProvider = props => {
     }
   };
 
+  const getCurrent = exercise => {
+    return setCurrent(exercise);
+  };
+
+  const clearCurrent = () => {
+    return setCurrent(null);
+  };
+
   return (
     <ExerciseContext.Provider
-      value={{ exercises, getExercises, addExercises, deleteExercises }}
+      value={{
+        exercises,
+        getExercises,
+        addExercises,
+        deleteExercises,
+        current,
+        getCurrent,
+        clearCurrent
+      }}
     >
       {props.children}
     </ExerciseContext.Provider>

@@ -43,6 +43,26 @@ const ExerciseContextProvider = props => {
     }
   };
 
+  const updateExercises = async exercise => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+
+    try {
+      const res = await axios
+        .patch(
+          `http://localhost:4000/exercises/${exercise._id}`,
+          exercise,
+          config
+        )
+        .then(res => console.log(res.data));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const getCurrent = exercise => {
     return setCurrent(exercise);
   };
@@ -60,7 +80,8 @@ const ExerciseContextProvider = props => {
         deleteExercises,
         current,
         getCurrent,
-        clearCurrent
+        clearCurrent,
+        updateExercises
       }}
     >
       {props.children}

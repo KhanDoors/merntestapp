@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useContext } from "react";
+import React, { Fragment, useState, useContext, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
@@ -18,7 +18,9 @@ const useStyles = makeStyles(theme => ({
 const ExerciseForm = () => {
   const classes = useStyles();
 
-  const { addExercises } = useContext(ExerciseContext);
+  const { addExercises, updateExercises, current } = useContext(
+    ExerciseContext
+  );
 
   const [exercise, setExercise] = useState({
     name: "",
@@ -27,6 +29,19 @@ const ExerciseForm = () => {
     duration: ""
   });
 
+  useEffect(() => {
+    if (current !== null) {
+      setExercise(current);
+    } else {
+      setExercise({
+        name: "",
+        url: "",
+        description: "",
+        duration: ""
+      });
+    }
+  }, [ExerciseContext, current]);
+
   const { name, url, description, duration } = exercise;
 
   const onChange = e =>
@@ -34,7 +49,10 @@ const ExerciseForm = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    addExercises(exercise);
+    if (current === null) {
+      addExercises(exercise);
+    }
+    updateExercises(exercise);
     setExercise({
       name: "",
       url: "",
@@ -46,7 +64,7 @@ const ExerciseForm = () => {
   return (
     <Fragment>
       <Typography style={{ marginBottom: ".5em" }} variant="h2">
-        Add Exercise
+        {current === null ? "Add Exercise" : "Edit Exercise"}
       </Typography>
       <form onSubmit={onSubmit}>
         <input
@@ -77,7 +95,10 @@ const ExerciseForm = () => {
           value={duration}
           onChange={onChange}
         />
-        <input type="submit" value="Add Exercise" />
+        <input
+          type="submit"
+          value={current === null ? "Add Exercise" : "Edit Exercise"}
+        />
       </form>
     </Fragment>
   );

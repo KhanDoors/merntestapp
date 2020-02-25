@@ -37,7 +37,7 @@ const ExerciseContextProvider = props => {
     try {
       const res = await axios
         .delete(`http://localhost:4000/exercises/${id}`)
-        .then(res => console.log(res.data));
+        .then(setExercises(exercises.filter(exercise => exercise._id !== id)));
     } catch (err) {
       console.log(err);
     }

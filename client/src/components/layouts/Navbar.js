@@ -27,9 +27,9 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function Navbar({ match }) {
+function Navbar({ match, props }) {
   const classes = useStyles();
-  const theme = useTheme();
+
   return (
     <Fragment>
       <ElevationScroll>
@@ -37,10 +37,10 @@ function Navbar({ match }) {
           <Toolbar>
             <Typography variant="h5">Exercise App</Typography>
             <div style={{ marginLeft: "auto" }}>
-              <Button variant="contained" style={{ backgroundColor: "yellow" }}>
+              <Button variant="contained" color="secondary">
                 <Link to="/">Home</Link>
               </Button>{" "}
-              <Button variant="contained" style={{ backgroundColor: "orange" }}>
+              <Button variant="contained" color="secondary">
                 <Link to="/exercises">Exercises</Link>
               </Button>
             </div>

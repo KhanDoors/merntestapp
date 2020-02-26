@@ -64,51 +64,48 @@ const ExerciseForm = () => {
 
   return (
     <Fragment>
-      <Grid container direction="row" justify="flex-start" alignItems="center">
-        <Typography style={{ marginBottom: ".5em" }} variant="h2">
-          {current ? "Edit Exercise" : "Add Exercise"}
-        </Typography>
-      </Grid>
-      <Grid>
-        <form className={classes.root} onSubmit={onSubmit}>
-          <TextField
-            itemType="text"
-            placeholder="Name"
-            name="name"
-            value={name}
-            onChange={onChange}
-          />
-          <TextField
-            itemType="url"
-            placeholder="Url"
-            name="url"
-            value={url}
-            onChange={onChange}
-          />
-          <TextField
-            itemType="text"
-            placeholder="Description"
-            name="description"
-            value={description}
-            onChange={onChange}
-          />
-          <TextField
-            itemType="text"
-            placeholder="Duration"
-            name="duration"
-            value={duration}
-            onChange={onChange}
-          />
-          <Button
-            variant="contained"
-            color="secondary"
-            type="submit"
-            value={current ? "Edit Exercise" : "Add Exercise"}
-          >
-            Submit
-          </Button>
-        </form>
-      </Grid>
+      <Typography style={{ marginBottom: ".5em" }} variant="h2">
+        {current ? "Edit Exercise" : "Add Exercise"}
+      </Typography>
+
+      <form className={classes.root} onSubmit={onSubmit}>
+        <TextField
+          itemType="text"
+          placeholder="Name"
+          name="name"
+          value={name}
+          onChange={onChange}
+        />
+        <TextField
+          itemType="url"
+          placeholder="Url"
+          name="url"
+          value={url}
+          onChange={onChange}
+        />
+        <TextField
+          itemType="text"
+          placeholder="Description"
+          name="description"
+          value={description}
+          onChange={onChange}
+        />
+        <TextField
+          itemType="text"
+          placeholder="Duration"
+          name="duration"
+          value={duration}
+          onChange={onChange}
+        />
+        <Button
+          variant="contained"
+          color="secondary"
+          type="submit"
+          value={current ? "Edit Exercise" : "Add Exercise"}
+        >
+          Submit
+        </Button>
+      </form>
     </Fragment>
   );
 };

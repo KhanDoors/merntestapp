@@ -12,11 +12,7 @@ import Home from "./components/pages/Home";
 import Navbar from "./components/layouts/Navbar";
 import Footer from "./components/layouts/Footer";
 import ExerciseContextProvider from "./contexts/ExerciseContext";
-import {
-  createMuiTheme,
-  makeStyles,
-  ThemeProvider
-} from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./theme";
 
 const App = () => {

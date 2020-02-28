@@ -41,7 +41,7 @@ function Navbar({ match, props }) {
                 <Link to="/">Home</Link>
               </Button>{" "}
               <Button variant="contained" color="secondary">
-                <Link to="/exercises">Exercises</Link>
+                <Link to="/map">Map</Link>
               </Button>
             </div>
           </Toolbar>

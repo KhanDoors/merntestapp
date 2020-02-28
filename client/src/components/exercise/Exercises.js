@@ -5,7 +5,6 @@ import { ExerciseContext } from "./../../contexts/ExerciseContext";
 import Typography from "@material-ui/core/Typography";
 
 const Exercises = () => {
-  // const [exercises, setExercises] = useState([]);
   const { exercises, getExercises } = useContext(ExerciseContext);
 
   useEffect(() => {

@@ -5,15 +5,13 @@ import {
   Switch,
   Redirect
 } from "react-router-dom";
-import Exercises from "./components/exercise/Exercises";
-import Exercise from "./components/exercise/Exercise";
-import ExerciseForm from "./components/exercise/ExerciseForm";
 import Home from "./components/pages/Home";
 import Navbar from "./components/layouts/Navbar";
 import Footer from "./components/layouts/Footer";
 import ExerciseContextProvider from "./contexts/ExerciseContext";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./theme";
+import Map from "./components/pages/Map";
 
 const App = () => {
   return (
@@ -23,9 +21,7 @@ const App = () => {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/exercises" component={Exercises} />
-            <Route exact path="/exerciseform" component={ExerciseForm} />
-            <Route exact path="/exercise/:id" component={Exercise} />
+            <Route exact path="/map" component={Map} />
             <Redirect to="/" />
           </Switch>
           <Footer />

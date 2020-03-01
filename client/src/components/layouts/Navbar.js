@@ -29,12 +29,13 @@ const useStyles = makeStyles(theme => ({
 
 function Navbar({ match, props }) {
   const classes = useStyles();
+  const theme = useTheme();
 
   return (
     <Fragment>
       <ElevationScroll>
         <AppBar position="fixed" color="primary">
-          <Toolbar>
+          <Toolbar sm>
             <Typography
               style={{ fontWeight: "bold", color: "#30F2F2" }}
               variant="h5"

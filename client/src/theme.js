@@ -12,13 +12,13 @@ export default createMuiTheme({
     common: {
       primary: first,
       secondary: second,
-      warning: sixth
+      error: sixth
     },
     primary: {
       main: first
     },
     secondary: {
-      main: second
+      main: fourth
     },
     error: {
       main: third

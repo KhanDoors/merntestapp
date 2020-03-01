@@ -35,10 +35,18 @@ function Navbar({ match, props }) {
       <ElevationScroll>
         <AppBar position="fixed" color="primary">
           <Toolbar>
-            <Typography variant="h5">Exercise App</Typography>
+            <Typography
+              style={{ fontWeight: "bold", color: "#30F2F2" }}
+              variant="h5"
+            >
+              React Feature Library
+            </Typography>
             <div style={{ marginLeft: "auto" }}>
               <Button variant="contained" color="secondary">
                 <Link to="/">Home</Link>
+              </Button>{" "}
+              <Button variant="contained" color="secondary">
+                <Link to="/exercises">Exercises</Link>
               </Button>{" "}
               <Button variant="contained" color="secondary">
                 <Link to="/map">Map</Link>

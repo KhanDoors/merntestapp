@@ -11,8 +11,7 @@ const Home = () => {
   return (
     <Fragment>
       <Container>
-        <ExerciseForm />
-        <Exercises />
+        <h1>Home Page</h1>
       </Container>
     </Fragment>
   );

@@ -12,6 +12,7 @@ import ExerciseContextProvider from "./contexts/ExerciseContext";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./theme";
 import Map from "./components/pages/Map";
+import Exercises from "./components/exercise/Exercises";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/exercises" component={Exercises} />
             <Route exact path="/map" component={Map} />
             <Redirect to="/" />
           </Switch>

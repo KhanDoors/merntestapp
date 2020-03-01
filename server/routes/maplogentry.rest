@@ -1,0 +1,14 @@
+GET http://localhost:4000/maplogentry
+
+###
+
+POST http://localhost:4000/maplogentry
+Content-Type: application/json
+
+{
+ "title": "Seminole Wekiva Trail", 
+ "description": "The Seminole Wekiva Trail has been built on the former Orange Belt Railway, at one time the longest railroad in the country. Peter A. Demens of Longwood was the driving force behind this railroad and, despite many difficulties, had the railroad built all the way to St. Petersburg.",
+ "image": "https://cloudfront.traillink.com/photos/seminole-wekiva-trail_138311_sc.jpg",
+ "latitude": 28,
+ "longitude": 81    
+}

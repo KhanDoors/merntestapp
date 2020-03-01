@@ -28,9 +28,11 @@ app.use(morgan("dev"));
 
 const exercisesRouter = require("./routes/exercises");
 const usersRouter = require("./routes/users");
+const mapLogEntryRouter = require("./routes/mapLogEntry");
 
 app.use("/users", usersRouter);
 app.use("/exercises", exercisesRouter);
+app.use("/maplogentry", mapLogEntryRouter);
 
 const PORT = process.env.PORT || 4000;
 

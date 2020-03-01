@@ -1,10 +1,10 @@
 import React from "react";
-import MapView from "./../maps/MapView";
+import Maps from "./../maps/Maps";
 
 const Map = () => {
   return (
     <div>
-      <MapView />
+      <Maps />
     </div>
   );
 };

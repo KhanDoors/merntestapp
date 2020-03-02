@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useContext, useEffect } from "react";
+import React, { Fragment, useContext, useEffect } from "react";
 import Exercise from "./Exercise";
 import Grid from "@material-ui/core/Grid";
 import { ExerciseContext } from "./../../contexts/ExerciseContext";
@@ -11,6 +11,7 @@ const Exercises = () => {
 
   useEffect(() => {
     getExercises();
+    // eslint-disable-next-line
   }, []);
 
   return (

@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useContext, useEffect } from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
 
 const ExerciseForm = () => {
   const classes = useStyles();
-  const theme = useTheme();
+  // const theme = useTheme();
 
   const { addExercises, updateExercises, current } = useContext(
     ExerciseContext

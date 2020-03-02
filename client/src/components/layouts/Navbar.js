@@ -6,7 +6,6 @@ import { Link, withRouter } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import { makeStyles } from "@material-ui/core/styles";
-import { useTheme } from "@material-ui/core/styles";
 
 function ElevationScroll(props) {
   const { children } = props;
@@ -29,13 +28,13 @@ const useStyles = makeStyles(theme => ({
 
 function Navbar({ match, props }) {
   const classes = useStyles();
-  const theme = useTheme();
+  // const theme = useTheme();
 
   return (
     <Fragment>
       <ElevationScroll>
         <AppBar position="fixed" color="primary">
-          <Toolbar sm>
+          <Toolbar>
             <Typography
               style={{ fontWeight: "bold", color: "#30F2F2" }}
               variant="h5"

@@ -52,7 +52,12 @@ const MapForm = () => {
               name="image"
               //   value={image}
             />
-            <Button variant="contained" color="secondary" type="submit">
+            <Button
+              variant="contained"
+              color="secondary"
+              type="submit"
+              value="add Pin"
+            >
               Submit
             </Button>
           </form>

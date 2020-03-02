@@ -47,7 +47,10 @@ const Maps = () => {
           }}
           variant="h4"
         >
-          It's a small ...
+          Places I've visited ... so far{" "}
+          <span role="img" aria-label="sunglasses">
+            😎
+          </span>
         </Typography>
       </Grid>
       <Grid container>
@@ -59,9 +62,8 @@ const Maps = () => {
           onDblClick={showAddMarkerPopup}
         >
           {pinEntries.map(pin => (
-            <Fragment>
+            <Fragment key={pin._id}>
               <Marker
-                key={pin._id}
                 latitude={pin.latitude}
                 longitude={pin.longitude}
                 offsetLeft={-12}

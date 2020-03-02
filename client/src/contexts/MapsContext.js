@@ -11,7 +11,6 @@ const MapsContextProvider = props => {
       const res = await axios
         .get("http://localhost:4000/maplogentry")
         .then(res => setPinEntries(res.data));
-      // .then(res => console.log(res.data));
     } catch (err) {
       console.log(err);
     }

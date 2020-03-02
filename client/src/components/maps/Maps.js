@@ -1,10 +1,10 @@
 import React, { Fragment, useState, useEffect, useContext } from "react";
 import ReactMapGL, { Marker } from "react-map-gl";
 import { withStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import Container from "@material-ui/core/Container";
 import { MapsContext } from "../../contexts/MapsContext";
-import RoomTwoToneIcon from "@material-ui/icons/RoomTwoTone";
 
 require("dotenv").config();
 
@@ -13,7 +13,7 @@ const Maps = () => {
 
   const [viewport, setViewport] = useState({
     width: "100vw",
-    height: 600,
+    height: 800,
     latitude: 37.6,
     longitude: -95.665,
     zoom: 3
@@ -27,6 +27,21 @@ const Maps = () => {
 
   return (
     <Fragment>
+      <Grid
+        style={{ marginBottom: "1em", marginTop: "1em" }}
+        container
+        justify="center"
+      >
+        <Typography
+          style={{
+            fontWeight: "bold",
+            color: "#355B8C"
+          }}
+          variant="h4"
+        >
+          My Places
+        </Typography>
+      </Grid>
       <Grid container>
         <ReactMapGL
           {...viewport}

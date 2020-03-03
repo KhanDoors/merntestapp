@@ -57,7 +57,13 @@ const ExerciseContextProvider = props => {
           exercise,
           config
         )
-        .then(res => res.data);
+        .then(res =>
+          setExercises(
+            exercises.map(exercise =>
+              exercise._id === res.data._id ? res.data : exercise
+            )
+          )
+        );
     } catch (err) {
       console.log(err);
     }

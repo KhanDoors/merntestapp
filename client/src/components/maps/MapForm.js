@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
 const MapForm = ({ location, onClose }) => {
   const classes = useStyles();
 
-  const { addPinEntry } = useContext(MapsContext);
+  const { addPinEntry, getPinEntries } = useContext(MapsContext);
 
   const [pinEntry, setPinEntry] = useState({
     title: "",
@@ -40,6 +40,7 @@ const MapForm = ({ location, onClose }) => {
     try {
       addPinEntry(pinEntry);
       onClose();
+      getPinEntries();
     } catch (err) {
       console.log(err);
     }

@@ -14,9 +14,9 @@ const Maps = () => {
   const [viewport, setViewport] = useState({
     width: "100vw",
     height: 800,
-    latitude: 37.6,
-    longitude: -95.665,
-    zoom: 3
+    latitude: 35.837764762791025,
+    longitude: -33.394351995663264,
+    zoom: 2.2
   });
 
   useEffect(() => {

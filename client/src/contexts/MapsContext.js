@@ -16,21 +16,21 @@ const MapsContextProvider = props => {
     }
   };
 
-  //   const addExercises = async exercise => {
-  //     const config = {
-  //       headers: {
-  //         "Content-Type": "application/json"
-  //       }
-  //     };
+  const addPinEntry = async pinEntry => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
 
-  //     try {
-  //       const res = await axios
-  //         .post("http://localhost:4000/exercises", exercise, config)
-  //         .then(res => setExercises([...exercises, res.data]));
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
+    try {
+      const res = await axios
+        .post("http://localhost:4000/maplogentry", pinEntry, config)
+        .then(res => setPinEntries([...pinEntries, res.data]));
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   //   const deleteExercises = async id => {
   //     try {
@@ -74,7 +74,8 @@ const MapsContextProvider = props => {
     <MapsContext.Provider
       value={{
         pinEntries,
-        getPinEntries
+        getPinEntries,
+        addPinEntry
       }}
     >
       {props.children}

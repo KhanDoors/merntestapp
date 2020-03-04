@@ -144,8 +144,8 @@ const Maps = () => {
                 onClose={() => setAddEntryLocation(null)}
                 anchor="top"
               >
-                <div style={{ maxWidth: "400px" }}>
-                  <MapForm />
+                <div style={{ width: "40vw" }}>
+                  <MapForm location={addEntryLocation} />
                 </div>
               </Popup>
             </Fragment>

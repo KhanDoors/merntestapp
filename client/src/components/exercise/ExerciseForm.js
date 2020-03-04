@@ -21,7 +21,7 @@ const ExerciseForm = () => {
   const classes = useStyles();
   // const theme = useTheme();
 
-  const { addExercises, updateExercises, current, getExercises } = useContext(
+  const { addExercises, updateExercises, current } = useContext(
     ExerciseContext
   );
 

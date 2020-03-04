@@ -152,7 +152,13 @@ const Maps = () => {
                 anchor="top"
               >
                 <div style={{ width: "40vw" }}>
-                  <MapForm location={addEntryLocation} />
+                  <MapForm
+                    onClose={() => {
+                      setAddEntryLocation(null);
+                      getPinEntries();
+                    }}
+                    location={addEntryLocation}
+                  />
                 </div>
               </Popup>
             </Fragment>

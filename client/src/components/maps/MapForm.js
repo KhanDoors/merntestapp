@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const MapForm = ({ location }) => {
+const MapForm = ({ location, onClose }) => {
   const classes = useStyles();
 
   const { addPinEntry } = useContext(MapsContext);
@@ -37,7 +37,12 @@ const MapForm = ({ location }) => {
 
   const onSubmit = e => {
     e.preventDefault();
-    addPinEntry(pinEntry);
+    try {
+      addPinEntry(pinEntry);
+      onClose();
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (

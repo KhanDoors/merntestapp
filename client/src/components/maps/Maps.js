@@ -104,6 +104,13 @@ const Maps = () => {
                 >
                   <div style={{ maxWidth: "300px" }}>
                     <h3>{pin.title}</h3>
+                    {pin.image && (
+                      <img
+                        style={{ height: "200px", width: "300px" }}
+                        src={pin.image}
+                        alt={pin.title}
+                      />
+                    )}
                     <p>{pin.description}</p>
                   </div>
                 </Popup>

@@ -50,6 +50,9 @@ function Navbar({ match, props }) {
               </Button>{" "}
               <Button variant="contained" color="secondary">
                 <Link to="/map">Map</Link>
+              </Button>{" "}
+              <Button variant="contained" color="secondary">
+                <Link to="/upload">Uploads</Link>
               </Button>
             </div>
           </Toolbar>

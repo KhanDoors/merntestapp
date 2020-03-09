@@ -14,6 +14,7 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./theme";
 import Map from "./components/pages/Map";
 import Exercises from "./components/pages/Exercises";
+import Upload from "./components/pages/Upload";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
               <Route exact path="/" component={Home} />
               <Route exact path="/exercises" component={Exercises} />
               <Route exact path="/map" component={Map} />
+              <Route exact path="/upload" component={Upload} />
               <Redirect to="/" />
             </Switch>
             <Footer />

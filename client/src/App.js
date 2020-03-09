@@ -13,7 +13,7 @@ import MapsContextProvider from "./contexts/MapsContext";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./theme";
 import Map from "./components/pages/Map";
-import Exercises from "./components/exercise/Exercises";
+import Exercises from "./components/pages/Exercises";
 
 const App = () => {
   return (

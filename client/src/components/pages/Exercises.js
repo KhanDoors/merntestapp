@@ -1,10 +1,10 @@
 import React, { Fragment, useContext, useEffect } from "react";
-import Exercise from "./Exercise";
+import Exercise from "../exercise/Exercise";
 import Grid from "@material-ui/core/Grid";
-import { ExerciseContext } from "./../../contexts/ExerciseContext";
 import Typography from "@material-ui/core/Typography";
-import ExerciseForm from "./ExerciseForm";
 import Container from "@material-ui/core/Container";
+import ExerciseForm from "./../exercise/ExerciseForm";
+import { ExerciseContext } from "./../../contexts/ExerciseContext";
 
 const Exercises = () => {
   const { exercises, getExercises } = useContext(ExerciseContext);

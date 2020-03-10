@@ -1,0 +1,6 @@
+POST http://localhost:4000/upload
+Content-Type: multipart/form-data
+
+{
+"image": "C:/Users/syykhan/Pictures/Saved Pictures/shelf.png"   
+}

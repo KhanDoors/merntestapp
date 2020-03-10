@@ -1,10 +1,8 @@
-let app = require("express");
+const app = require("express");
 const mongoose = require("mongoose");
-let multer = require("multer");
-let router = app.Router();
+const multer = require("multer");
+const router = app.Router();
 const Upload = require("../models/uploadModel");
-
-let imgPort = "http://localhost:4000";
 
 let storage = multer.diskStorage({
   destination: function(req, file, cb) {
@@ -34,10 +32,11 @@ let upload = multer({
   fileFilter: fileFilter
 });
 
-router.post("/file", upload.single("image"), async (req, res) => {
+// Upload Image
+router.post("/", upload.single("image"), async (req, res) => {
   try {
     let file = new Upload({
-      image: imgPort + "/uploads/" + req.file.filename
+      image: req.file.filename
     });
     if (!file) {
       return res.status(403).send("file not found");

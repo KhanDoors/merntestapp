@@ -29,10 +29,14 @@ app.use(morgan("dev"));
 const exercisesRouter = require("./routes/exercises");
 const usersRouter = require("./routes/users");
 const mapLogEntryRouter = require("./routes/mapLogEntry");
+const uploadRouter = require("./routes/upload");
+
+app.use("/uploads", express.static("uploads"));
 
 app.use("/users", usersRouter);
 app.use("/exercises", exercisesRouter);
 app.use("/maplogentry", mapLogEntryRouter);
+app.use("/upload", uploadRouter);
 
 const PORT = process.env.PORT || 4000;
 

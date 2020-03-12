@@ -1,11 +1,14 @@
 import React from "react";
 import Uploads from "../uploads/Uploads";
+import Navbar from "../layouts/Navbar";
 
 const Upload = () => {
   return (
-    <div>
-      <Uploads />
-    </div>
+    <Navbar>
+      <div>
+        <Uploads />
+      </div>
+    </Navbar>
   );
 };
 

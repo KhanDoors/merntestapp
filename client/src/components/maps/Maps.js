@@ -13,7 +13,7 @@ const Maps = () => {
   const [addEntryLocation, setAddEntryLocation] = useState(null);
   const [viewport, setViewport] = useState({
     width: "100vw",
-    height: 800,
+    height: 825,
     latitude: 35.837764762791025,
     longitude: -33.394351995663264,
     zoom: 2.2

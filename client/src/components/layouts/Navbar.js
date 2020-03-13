@@ -77,12 +77,12 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const menuItems = [
-  { listIcon: <InboxIcon />, listText: <Link to="/">Home</Link> },
-  { listIcon: <InboxIcon />, listText: <Link to="/exercises">Exercises</Link> },
-  { listIcon: <InboxIcon />, listText: <Link to="/map">Maps</Link> },
-  { listIcon: <InboxIcon />, listText: <Link to="/upload">Uploads</Link> }
-];
+// const menuItems = [
+//   { listIcon: <InboxIcon />, listText: <Link to="/">Home</Link> },
+//   { listIcon: <InboxIcon />, listText: <Link to="/exercises">Exercises</Link> },
+//   { listIcon: <InboxIcon />, listText: <Link to="/map">Maps</Link> },
+//   { listIcon: <InboxIcon />, listText: <Link to="/upload">Uploads</Link> }
+// ];
 
 export default function Navbar(props) {
   const classes = useStyles();
@@ -141,14 +141,45 @@ export default function Navbar(props) {
         </div>
         <Divider />
         <List>
-          {menuItems.map((item, i) => (
+          {/* {menuItems.map((item, i) => (
             <ListItem button key={i}>
               <ListItemIcon>{item.listIcon}</ListItemIcon>
-              <Link>
-                <ListItemText>{item.listText}</ListItemText>
-              </Link>
+
+              <ListItemText>{item.listText}</ListItemText>
             </ListItem>
-          ))}
+          ))} */}
+          <ListItem>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText>
+              <Link to="/">Home</Link>
+            </ListItemText>
+          </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText>
+              <Link to="/exercises">Exercises</Link>
+            </ListItemText>
+          </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText>
+              <Link to="/map">Maps</Link>
+            </ListItemText>
+          </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText>
+              <Link to="/upload">Uploads</Link>
+            </ListItemText>
+          </ListItem>
         </List>
       </Drawer>
       <main

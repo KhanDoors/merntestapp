@@ -150,34 +150,67 @@ export default function Navbar(props) {
           ))} */}
           <ListItem>
             <ListItemIcon>
-              <InboxIcon />
+              {" "}
+              <span role="img" aria-label="home">
+                {" "}
+                🏡{" "}
+              </span>
             </ListItemIcon>
             <ListItemText>
-              <Link to="/">Home</Link>
+              <Link style={{ color: "orange", textDecoration: "none" }} to="/">
+                Home
+              </Link>
             </ListItemText>
           </ListItem>
           <ListItem>
             <ListItemIcon>
-              <InboxIcon />
+              {" "}
+              <span role="img" aria-label="exercise">
+                {" "}
+                ⚽{" "}
+              </span>
             </ListItemIcon>
             <ListItemText>
-              <Link to="/exercises">Exercises</Link>
+              <Link
+                style={{ color: "red", textDecoration: "none" }}
+                to="/exercises"
+              >
+                Exercises
+              </Link>
             </ListItemText>
           </ListItem>
           <ListItem>
             <ListItemIcon>
-              <InboxIcon />
+              {" "}
+              <span role="img" aria-label="home">
+                {" "}
+                🌄{" "}
+              </span>
             </ListItemIcon>
             <ListItemText>
-              <Link to="/map">Maps</Link>
+              <Link
+                style={{ color: "green", textDecoration: "none" }}
+                to="/map"
+              >
+                Maps
+              </Link>
             </ListItemText>
           </ListItem>
           <ListItem>
             <ListItemIcon>
-              <InboxIcon />
+              {" "}
+              <span role="img" aria-label="home">
+                {" "}
+                🎁{" "}
+              </span>
             </ListItemIcon>
             <ListItemText>
-              <Link to="/upload">Uploads</Link>
+              <Link
+                style={{ color: "blue", textDecoration: "none" }}
+                to="/upload"
+              >
+                Uploads
+              </Link>
             </ListItemText>
           </ListItem>
         </List>

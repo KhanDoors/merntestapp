@@ -15,8 +15,6 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
 import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -167,7 +165,7 @@ export default function Navbar(props) {
               {" "}
               <span role="img" aria-label="exercise">
                 {" "}
-                ⚽{" "}
+                💥{" "}
               </span>
             </ListItemIcon>
             <ListItemText>
@@ -201,7 +199,7 @@ export default function Navbar(props) {
               {" "}
               <span role="img" aria-label="home">
                 {" "}
-                🎁{" "}
+                ⏫{" "}
               </span>
             </ListItemIcon>
             <ListItemText>

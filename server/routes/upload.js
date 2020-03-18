@@ -33,7 +33,7 @@ let upload = multer({
 });
 
 // Upload Image
-router.post("/", upload.single("image"), async (req, res) => {
+router.post("/", upload.single("file"), async (req, res) => {
   try {
     let file = new Upload({
       image: req.file.filename

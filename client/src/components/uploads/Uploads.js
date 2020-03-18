@@ -6,16 +6,20 @@ import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 const Uploads = () => {
   const [images, setImages] = useState([]);
 
-  const onDrop = async files => {
+  const onDrop = files => {
+    setImages(files[0]);
+  };
+
+  const onSubmit = async files => {
     let formData = new FormData();
-    formData.append("file", files[0]);
+    formData.append("file", images);
     const config = {
       header: { "content-type": "multipart/form-data" }
     };
     try {
       const res = await axios
         .post("http://localhost:4000/upload", formData, config)
-        .then(res => setImages([...images, res.data]));
+        .then(res => setImages(res.data));
     } catch (err) {
       console.log(err);
     }
@@ -50,6 +54,27 @@ const Uploads = () => {
           </div>
         )}
       </Dropzone>
+      {/* <div
+        style={{
+          display: "flex",
+          width: "350px",
+          height: "240px",
+          overflowX: "scroll"
+        }}
+      >
+        {images.map((image, index) => (
+          <div key={index}>
+            <img
+              style={{ minWidth: "300px", width: "300px", height: "240px" }}
+              src={image}
+              alt={index}
+            />
+          </div>
+        ))}
+      </div> */}
+      <div>
+        <button onClick={onSubmit}>Upload</button>
+      </div>
     </div>
   );
 };

@@ -1,34 +1,29 @@
 import React, { useState } from "react";
 import Dropzone from "react-dropzone";
-
 import axios from "axios";
 
 const Uploads = () => {
   const [Images, setImages] = useState([]);
 
-  const onDrop = files => {
+  const onDrop = async files => {
     let formData = new FormData();
+    formData.append("file", files[0]);
     const config = {
       header: { "content-type": "multipart/form-data" }
     };
-    formData.append("file", files[0]);
-    //save the Image we chose inside the Node Server
-    axios
-      .post("http://localhost:4000/upload", formData, config)
-      .then(response => {
-        console.log(response);
-        if (response.data.success) {
-          setImages([...Images, response.data.image]);
-        } else {
-          alert("Failed to save the Image in Server");
-        }
-      });
+    try {
+      const res = await axios
+        .post("http://localhost:4000/upload", formData, config)
+        .then(res => setImages([...Images, res.data]));
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   console.log(Images);
 
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
+    <div style={{ display: "flex", justifyContent: "center" }}>
       <Dropzone onDrop={onDrop} multiple={false} maxSize={800000000}>
         {({ getRootProps, getInputProps }) => (
           <div
@@ -43,6 +38,7 @@ const Uploads = () => {
             {...getRootProps()}
           >
             <input {...getInputProps()} />
+
             <p>Drag 'n' drop some files here, or click to select files</p>
           </div>
         )}

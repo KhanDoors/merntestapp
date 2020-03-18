@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Dropzone from "react-dropzone";
 import axios from "axios";
+import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 
 const Uploads = () => {
   const [Images, setImages] = useState([]);
@@ -38,8 +39,14 @@ const Uploads = () => {
             {...getRootProps()}
           >
             <input {...getInputProps()} />
-
-            <p>Drag 'n' drop some files here, or click to select files</p>
+            <div style={{ display: "column" }}>
+              <div style={{ textAlign: "center" }}>
+                <CloudUploadIcon color="secondary" fontSize="large" />
+              </div>
+              <div>
+                <h3>Drag 'n' drop some files here, or click to select files</h3>
+              </div>
+            </div>
           </div>
         )}
       </Dropzone>

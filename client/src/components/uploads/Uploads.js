@@ -4,7 +4,7 @@ import axios from "axios";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 
 const Uploads = () => {
-  const [Images, setImages] = useState([]);
+  const [images, setImages] = useState([]);
 
   const onDrop = async files => {
     let formData = new FormData();
@@ -15,13 +15,13 @@ const Uploads = () => {
     try {
       const res = await axios
         .post("http://localhost:4000/upload", formData, config)
-        .then(res => setImages([...Images, res.data]));
+        .then(res => setImages([...images, res.data]));
     } catch (err) {
       console.log(err);
     }
   };
 
-  console.log(Images);
+  console.log(images);
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>

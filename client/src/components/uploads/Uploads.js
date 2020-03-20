@@ -5,12 +5,21 @@ import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 
 const Uploads = () => {
   const [images, setImages] = useState([]);
+  const [files, setFiles] = useState([]);
 
   const onDrop = files => {
     setImages(files[0]);
+    setFiles(
+      files.map(file =>
+        Object.assign(file, {
+          preview: URL.createObjectURL(file)
+        })
+      )
+    );
   };
 
-  const onSubmit = async files => {
+  const onSubmit = async e => {
+    e.preventDefault();
     let formData = new FormData();
     formData.append("file", images);
     const config = {
@@ -25,7 +34,55 @@ const Uploads = () => {
     }
   };
 
-  console.log(images);
+  const thumbsContainer = {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    marginTop: 16
+  };
+
+  const thumb = {
+    display: "inline-flex",
+    borderRadius: 2,
+    border: "1px solid #eaeaea",
+    marginBottom: 8,
+    marginRight: 8,
+    width: 100,
+    height: 100,
+    padding: 4,
+    boxSizing: "border-box"
+  };
+
+  const thumbInner = {
+    display: "flex",
+    minWidth: 0,
+    overflow: "hidden"
+  };
+
+  const img = {
+    width: "13rem",
+    height: "13rem",
+    border: "1px solid #ccc",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+    marginBottom: "1rem"
+  };
+
+  const thumbs = files.map(file => (
+    <div style={thumb} key={file.name}>
+      <div style={thumbInner}>
+        <img src={file.preview} style={img} />
+      </div>
+    </div>
+  ));
+
+  const filepath = files.map(file => (
+    <li key={file.path}>
+      {file.path} - {file.size} bytes
+    </li>
+  ));
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
@@ -54,24 +111,12 @@ const Uploads = () => {
           </div>
         )}
       </Dropzone>
-      {/* <div
-        style={{
-          display: "flex",
-          width: "350px",
-          height: "240px",
-          overflowX: "scroll"
-        }}
-      >
-        {images.map((image, index) => (
-          <div key={index}>
-            <img
-              style={{ minWidth: "300px", width: "300px", height: "240px" }}
-              src={image}
-              alt={index}
-            />
-          </div>
-        ))}
-      </div> */}
+      <aside>
+        <h4>Selected Files:</h4>
+        <ul>{filepath}</ul>
+      </aside>
+      <aside style={thumbsContainer}>{thumbs}</aside>
+
       <div>
         <button onClick={onSubmit}>Upload</button>
       </div>

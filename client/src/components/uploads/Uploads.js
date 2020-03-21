@@ -11,8 +11,7 @@ import IconButton from "@material-ui/core/IconButton";
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    justify: "center",
-    alignItems: "center"
+    marginLeft: "5em"
   },
   paper: {
     height: 140,
@@ -61,18 +60,18 @@ const Uploads = () => {
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
-    marginTop: 16
+    marginTop: 1
   };
 
   const thumb = {
     display: "inline-flex",
-    borderRadius: 2,
+    borderRadius: 1,
     border: "1px solid #eaeaea",
-    marginBottom: 8,
-    marginRight: 8,
-    width: 100,
-    height: 100,
-    padding: 4,
+    // marginBottom: 1,
+    // marginRight: 1,
+    width: "210px",
+    height: "200px",
+    padding: 1,
     boxSizing: "border-box"
   };
 
@@ -140,23 +139,24 @@ const Uploads = () => {
           </Dropzone>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <aside>
-            <h4>Selected Files:</h4>
-            <ul>{filepath}</ul>
-          </aside>
           <aside style={thumbsContainer}>{thumbs}</aside>
+          <div>
+            <aside>
+              <h4>Selected Files:</h4>
+              <ul>{filepath}</ul>
+            </aside>
+          </div>
+          <Button color="primary" variant="contained" onClick={onSubmit}>
+            Upload
+          </Button>
+          <IconButton
+            color="primary"
+            aria-label="upload picture"
+            component="span"
+          >
+            <PhotoCamera />
+          </IconButton>
         </Grid>
-
-        <Button color="primary" variant="contained" onClick={onSubmit}>
-          Upload
-        </Button>
-        <IconButton
-          color="primary"
-          aria-label="upload picture"
-          component="span"
-        >
-          <PhotoCamera />
-        </IconButton>
       </Grid>
     </div>
   );

@@ -1,13 +1,14 @@
 import React from "react";
 import Maps from "./../maps/Maps";
 import Navbar from "../layouts/Navbar";
+import Container from "@material-ui/core/Container";
 
 const Map = () => {
   return (
     <Navbar>
-      <div>
+      <Container>
         <Maps />
-      </div>
+      </Container>
     </Navbar>
   );
 };

@@ -142,7 +142,7 @@ const Uploads = () => {
           <aside style={thumbsContainer}>{thumbs}</aside>
           <div>
             <aside>
-              <h4>Selected Files:</h4>
+              <h4>Selected File:</h4>
               <ul>{filepath}</ul>
             </aside>
           </div>

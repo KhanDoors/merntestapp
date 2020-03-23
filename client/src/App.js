@@ -15,6 +15,7 @@ import theme from "./theme";
 import Map from "./components/pages/Map";
 import Exercises from "./components/pages/Exercises";
 import Upload from "./components/pages/Upload";
+import Chart from "./components/pages/Chart";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
               <Route exact path="/exercises" component={Exercises} />
               <Route exact path="/map" component={Map} />
               <Route exact path="/upload" component={Upload} />
+              <Route exact path="/chart" component={Chart} />
               <Redirect to="/" />
             </Switch>
             <Footer />

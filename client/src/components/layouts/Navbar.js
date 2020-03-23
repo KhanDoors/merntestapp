@@ -211,6 +211,23 @@ export default function Navbar(props) {
               </Link>
             </ListItemText>
           </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              {" "}
+              <span role="img" aria-label="home">
+                {" "}
+                📊{" "}
+              </span>
+            </ListItemIcon>
+            <ListItemText>
+              <Link
+                style={{ color: "orange", textDecoration: "none" }}
+                to="/chart"
+              >
+                Charts
+              </Link>
+            </ListItemText>
+          </ListItem>
         </List>
       </Drawer>
       <main

@@ -7,18 +7,18 @@ import Typography from "@material-ui/core/Typography";
 const Upload = () => {
   return (
     <Navbar>
-      <Typography
-        style={{
-          textAlign: "center",
-          marginBottom: 30,
-          fontWeight: "bold",
-          color: "#355B8C"
-        }}
-        variant="h4"
-      >
-        Upload Photos
-      </Typography>
       <Container style={{ height: "70vh" }}>
+        <Typography
+          style={{
+            textAlign: "center",
+            marginBottom: 30,
+            fontWeight: "bold",
+            color: "#355B8C"
+          }}
+          variant="h4"
+        >
+          Upload Photos
+        </Typography>
         <Uploads />
       </Container>
     </Navbar>

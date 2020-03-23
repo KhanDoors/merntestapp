@@ -155,7 +155,7 @@ export default function Navbar(props) {
               </span>
             </ListItemIcon>
             <ListItemText>
-              <Link style={{ color: "orange", textDecoration: "none" }} to="/">
+              <Link style={{ color: "teal", textDecoration: "none" }} to="/">
                 Home
               </Link>
             </ListItemText>

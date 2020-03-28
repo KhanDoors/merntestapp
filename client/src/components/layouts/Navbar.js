@@ -211,20 +211,21 @@ export default function Navbar(props) {
               </Link>
             </ListItemText>
           </ListItem>
+
           <ListItem>
             <ListItemIcon>
               {" "}
               <span role="img" aria-label="home">
                 {" "}
-                📊{" "}
+                🩸{" "}
               </span>
             </ListItemIcon>
             <ListItemText>
               <Link
-                style={{ color: "orange", textDecoration: "none" }}
-                to="/chart"
+                style={{ color: "pink", textDecoration: "none" }}
+                to="/covid"
               >
-                Charts
+                Covid 19
               </Link>
             </ListItemText>
           </ListItem>

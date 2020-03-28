@@ -16,6 +16,7 @@ import Map from "./components/pages/Map";
 import Exercises from "./components/pages/Exercises";
 import Upload from "./components/pages/Upload";
 import Chart from "./components/pages/Chart";
+import Covid19 from "./components/pages/Covid19";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
               <Route exact path="/map" component={Map} />
               <Route exact path="/upload" component={Upload} />
               <Route exact path="/chart" component={Chart} />
+              <Route exact path="/covid" component={Covid19} />
               <Redirect to="/" />
             </Switch>
             <Footer />

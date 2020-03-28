@@ -147,8 +147,37 @@ function Home() {
               }
             />
           </ListItem>
+          <Divider variant="inset" component="li" />
+          <Divider variant="inset" component="li" />
+          <ListItem alignItems="flex-start">
+            <ListItemAvatar>
+              <span role="img" aria-label="home">
+                {" "}
+                🩸{" "}
+              </span>
+            </ListItemAvatar>
+            <ListItemText
+              style={{ color: "pink" }}
+              primary="Covid 19"
+              secondary={
+                <React.Fragment>
+                  <Typography
+                    component="span"
+                    variant="body2"
+                    className={classes.inline}
+                    color="textPrimary"
+                  >
+                    Covid 19
+                  </Typography>
+                  {
+                    " — Tracking Covid 19 and demonstrating working with an external API"
+                  }
+                </React.Fragment>
+              }
+            />
+          </ListItem>
+          <Divider variant="inset" component="li" />
           {/* <Divider variant="inset" component="li" />
-          <Divider variant="inset" component="li" />
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
               <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
@@ -169,31 +198,8 @@ function Home() {
                 </React.Fragment>
               }
             />
-          </ListItem>
+          </ListItem> */}
           <Divider variant="inset" component="li" />
-          <Divider variant="inset" component="li" />
-          <ListItem alignItems="flex-start">
-            <ListItemAvatar>
-              <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-            </ListItemAvatar>
-            <ListItemText
-              primary="Summer BBQ"
-              secondary={
-                <React.Fragment>
-                  <Typography
-                    component="span"
-                    variant="body2"
-                    className={classes.inline}
-                    color="textPrimary"
-                  >
-                    to Scott, Alex, Jennifer
-                  </Typography>
-                  {" — Wish I could come, but I'm out of town this…"}
-                </React.Fragment>
-              }
-            />
-          </ListItem>
-          <Divider variant="inset" component="li" /> */}
         </List>
       </Container>
     </Navbar>

@@ -39,16 +39,21 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Covid() {
+export default function Countries() {
   const classes = useStyles();
   const [spacing, setSpacing] = useState(2);
   const [latest, setLatest] = useState([]);
+  const [results, setResults] = useState([]);
 
   useEffect(() => {
     axios
-      .get("https://corona.lmao.ninja/all")
-      .then(res => {
-        setLatest(res.data);
+      .all([
+        axios.get("https://corona.lmao.ninja/all"),
+        axios.get("https://corona.lmao.ninja/countries")
+      ])
+      .then(resArr => {
+        setLatest(resArr[0].data);
+        setResults(resArr[1].data);
       })
       .catch(err => {
         console.log(err);

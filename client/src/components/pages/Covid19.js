@@ -2,12 +2,14 @@ import React from "react";
 import Navbar from "../layouts/Navbar";
 import Container from "@material-ui/core/Container";
 import Covid from "../covid19/Covid";
+import Countries from "../covid19/Countries";
 
 const Covid19 = () => {
   return (
     <Navbar>
-      <Container style={{ height: "80vh" }}>
+      <Container>
         <Covid />
+        <Countries />
       </Container>
     </Navbar>
   );

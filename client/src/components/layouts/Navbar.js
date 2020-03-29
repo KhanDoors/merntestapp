@@ -170,7 +170,7 @@ export default function Navbar(props) {
             </ListItemIcon>
             <ListItemText>
               <Link
-                style={{ color: "red", textDecoration: "none" }}
+                style={{ color: "purple", textDecoration: "none" }}
                 to="/exercises"
               >
                 Exercises
@@ -239,7 +239,7 @@ export default function Navbar(props) {
             </ListItemIcon>
             <ListItemText>
               <Link
-                style={{ color: "pink", textDecoration: "none" }}
+                style={{ color: "red", textDecoration: "none" }}
                 to="/covid"
               >
                 Covid 19

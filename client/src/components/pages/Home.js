@@ -50,7 +50,7 @@ function Home() {
             </ListItemAvatar>
             <ListItemText
               primary="Exercises"
-              style={{ color: "red" }}
+              style={{ color: "purple" }}
               secondary={
                 <React.Fragment>
                   <Typography
@@ -157,7 +157,7 @@ function Home() {
               </span>
             </ListItemAvatar>
             <ListItemText
-              style={{ color: "pink" }}
+              style={{ color: "red" }}
               primary="Covid 19"
               secondary={
                 <React.Fragment>

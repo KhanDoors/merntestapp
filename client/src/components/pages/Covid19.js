@@ -7,7 +7,7 @@ import Countries from "../covid19/Countries";
 const Covid19 = () => {
   return (
     <Navbar>
-      <Container>
+      <Container style={{ width: "100vw" }}>
         <Covid />
         <Countries />
       </Container>

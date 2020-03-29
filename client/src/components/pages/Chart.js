@@ -10,7 +10,7 @@ import Card from "@material-ui/core/Card";
 export default function Chart() {
   return (
     <Navbar>
-      <div>
+      <div style={{ width: "100vw" }}>
         <Grid
           container
           style={{ marginBottom: "1em", marginTop: "1em" }}

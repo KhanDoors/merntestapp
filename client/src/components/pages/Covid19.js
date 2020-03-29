@@ -18,25 +18,24 @@ const Covid19 = () => {
 
   return (
     <Navbar>
-      <Container style={{ marginBottom: "1em" }}>
-        <Grid
-          style={{ marginBottom: "1em", marginTop: "1em" }}
-          container
-          justify="center"
+      <Grid
+        style={{ marginBottom: "1em", marginTop: "1em" }}
+        container
+        justify="center"
+      >
+        <Typography
+          style={{ fontWeight: "bold", color: "#355B8C" }}
+          variant="h2"
         >
-          <Typography
-            style={{ fontWeight: "bold", color: "#355B8C" }}
-            variant="h2"
-          >
-            Covid - 19 Update
-          </Typography>
+          Covid - 19 Update
+        </Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Grid>
+          <Covid />
         </Grid>
-        <Grid item xs={12}>
-          <Grid>
-            <Covid />
-          </Grid>
-        </Grid>
-      </Container>
+      </Grid>
+
       <br />
       <Grid
         style={{ marginBottom: "1em", marginTop: "1em" }}

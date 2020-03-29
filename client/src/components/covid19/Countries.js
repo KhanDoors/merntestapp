@@ -12,6 +12,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Grid from "@material-ui/core/Grid";
 import axios from "axios";
 import CardActionArea from "@material-ui/core/CardActionArea";
+import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -41,9 +42,9 @@ export default function Countries() {
 
   return (
     <Grid container justify="center" spacing={10}>
-      {results.map(result => {
+      {results.map((result, i) => {
         return (
-          <Card className={classes.card} key={result.country}>
+          <Card className={classes.card} key={i}>
             <CardActionArea>
               <CardMedia
                 className={classes.media}

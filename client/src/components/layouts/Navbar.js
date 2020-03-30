@@ -234,7 +234,7 @@ export default function Navbar(props) {
               {" "}
               <span role="img" aria-label="home">
                 {" "}
-                🩸{" "}
+                🔥{" "}
               </span>
             </ListItemIcon>
             <ListItemText>

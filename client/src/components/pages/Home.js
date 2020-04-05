@@ -153,7 +153,7 @@ function Home() {
             <ListItemAvatar>
               <span role="img" aria-label="home">
                 {" "}
-                🩸{" "}
+                🔥{" "}
               </span>
             </ListItemAvatar>
             <ListItemText

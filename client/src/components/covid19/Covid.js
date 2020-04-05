@@ -45,7 +45,7 @@ export default function Covid() {
   const [latest, setLatest] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const getExercises = async () => {
+  const getLatest = async () => {
     try {
       const res = await axios
         .get("https://corona.lmao.ninja/all")
@@ -57,7 +57,7 @@ export default function Covid() {
   };
 
   useEffect(() => {
-    getExercises();
+    getLatest();
   }, []);
 
   let today = new Date(latest.updated).toString();

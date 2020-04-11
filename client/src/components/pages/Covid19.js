@@ -2,15 +2,17 @@ import React from "react";
 import Navbar from "../layouts/Navbar";
 import Container from "@material-ui/core/Container";
 import Covid from "../covid19/Covid";
+import CovidChart from "../covid19/CovidChart";
+import CovidCountryChart from "../covid19/CovidCountryChart";
 import Countries from "../covid19/Countries";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
-  }
+    flexGrow: 1,
+  },
 }));
 
 const Covid19 = () => {
@@ -35,7 +37,18 @@ const Covid19 = () => {
           <Covid />
         </Grid>
       </Grid>
-
+      <br />
+      <Grid item xs={12}>
+        <Grid>
+          <CovidChart />
+        </Grid>
+      </Grid>
+      <br />
+      <Grid item xs={12}>
+        <Grid>
+          <CovidCountryChart />
+        </Grid>
+      </Grid>
       <br />
       <Grid
         style={{ marginBottom: "1em", marginTop: "1em" }}

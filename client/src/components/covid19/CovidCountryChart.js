@@ -19,7 +19,7 @@ import { NativeSelect } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   card: {
     height: "30em",
-    width: "50em",
+    width: "40em",
   },
   media: {
     height: 0,
@@ -44,6 +44,7 @@ export default function CovidCountryChart() {
   const [countryData, setCountryData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState([]);
+  const [countryInfo, setCountryInfo] = useState("");
 
   const getCountryData = async () => {
     try {
@@ -56,8 +57,6 @@ export default function CovidCountryChart() {
     }
   };
 
-  console.log(countryData);
-
   useEffect(() => {
     getCountryData();
   }, []);
@@ -66,53 +65,83 @@ export default function CovidCountryChart() {
     setSelected(event.target.value || "");
   };
 
-  console.log(selected);
+  const callCountryData = async (selected) => {
+    try {
+      const res = await axios
+        .get(`https://covid19.mathdro.id/api/countries/${selected}`)
+        .then((res) => setCountryInfo(res.data))
+        .then(setLoading(false));
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-  //   const lineChart = dailyData[0] ? (
-  //     <Line
-  //       data={{
-  //         labels: dailyData.map((data) => data.reportDate),
-  //         datasets: [
-  //           {
-  //             data: dailyData.map((data) => data.confirmed.total),
-  //             label: "Infected",
-  //             borderColor: "#3333ff",
-  //             fill: true,
-  //           },
-  //           {
-  //             data: dailyData.map((data) => data.deaths.total),
-  //             label: "Deaths",
-  //             borderColor: "red",
-  //             backgroundColor: "rgba(255, 0, 0, 0.5)",
-  //             fill: true,
-  //           },
-  //         ],
-  //       }}
-  //     />
-  //   ) : null;
+  useEffect(() => {
+    callCountryData(selected);
+  }, [selected]);
+
+  const barChart = countryInfo.confirmed ? (
+    <Bar
+      data={{
+        labels: ["Cases", "Recovered", "Deaths"],
+        datasets: [
+          {
+            label: "People",
+            backgroundColor: ["blue", "green", "red"],
+            data: [
+              countryInfo.confirmed.value,
+              countryInfo.recovered.value,
+              countryInfo.deaths.value,
+            ],
+          },
+        ],
+      }}
+      options={{
+        legend: { display: false },
+        title: { dosplay: true, text: `Current state in ${selected}` },
+      }}
+    />
+  ) : null;
 
   return (
-    <Grid container className={classes.root} spacing={2}>
-      {countryData !== null && loading !== true ? (
-        <Grid item xs={12}>
-          <Grid container justify="center" spacing={spacing}>
-            <Grid item>
-              <FormControl>
-                <NativeSelect onChange={handleChange} style={{ width: 100 }}>
-                  <option value="global">Global</option>
-                  {countryData.map((country, i) => (
-                    <option key={i} value={country.name}>
-                      {country.name}{" "}
-                    </option>
-                  ))}
-                </NativeSelect>
-              </FormControl>
+    <>
+      <Grid container className={classes.root} spacing={2}>
+        {countryData !== null && loading !== true ? (
+          <Grid item xs={12}>
+            <Grid container justify="center" spacing={spacing}>
+              <Grid item>
+                <FormControl>
+                  <NativeSelect onChange={handleChange} style={{ width: 100 }}>
+                    <option value="global">Enter Country</option>
+                    {countryData.map((country, i) => (
+                      <option key={i} value={country.name}>
+                        {country.name}{" "}
+                      </option>
+                    ))}
+                  </NativeSelect>
+                </FormControl>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-      ) : (
-        <div>Loading...</div>
-      )}
-    </Grid>
+        ) : (
+          <div>Loading...</div>
+        )}
+      </Grid>
+      <Grid container className={classes.root} spacing={2}>
+        {countryInfo !== null && loading !== true ? (
+          <Grid item xs={12}>
+            <Grid container justify="center" spacing={spacing}>
+              <Grid item>
+                <Card className={classes.card}>
+                  <CardContent>{barChart}</CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+          </Grid>
+        ) : (
+          <div>Loading...</div>
+        )}
+      </Grid>
+    </>
   );
 }

@@ -38,18 +38,20 @@ const Covid19 = () => {
         </Grid>
       </Grid>
       <br />
-      <Grid item xs={12}>
-        <Grid>
-          <CovidChart />
+      <Grid container spacing={3}>
+        <Grid item xs={6}>
+          <Grid>
+            <CovidChart />
+          </Grid>
         </Grid>
-      </Grid>
-      <br />
-      <Grid item xs={12}>
-        <Grid>
-          <CovidCountryChart />
+
+        <Grid item xs={6}>
+          <Grid>
+            <CovidCountryChart />
+          </Grid>
         </Grid>
+        <br />
       </Grid>
-      <br />
       <Grid
         style={{ marginBottom: "1em", marginTop: "1em" }}
         container

@@ -18,7 +18,7 @@ import { NativeSelect } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    height: "30em",
+    height: "27em",
     width: "40em",
   },
   media: {

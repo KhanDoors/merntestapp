@@ -98,7 +98,7 @@ export default function CovidCountryChart() {
       }}
       options={{
         legend: { display: false },
-        title: { dosplay: true, text: `Current state in ${selected}` },
+        title: { display: true, text: `Current state in ${selected}` },
       }}
     />
   ) : null;
@@ -111,7 +111,7 @@ export default function CovidCountryChart() {
             <Grid container justify="center" spacing={spacing}>
               <Grid item>
                 <FormControl>
-                  <NativeSelect onChange={handleChange} style={{ width: 100 }}>
+                  <NativeSelect onChange={handleChange} style={{ width: 120 }}>
                     <option value="global">Enter Country</option>
                     {countryData.map((country, i) => (
                       <option key={i} value={country.name}>

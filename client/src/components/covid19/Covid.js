@@ -93,7 +93,12 @@ export default function Covid() {
                     The Total Number of Cases is:
                     <strong style={{ color: "red" }}>
                       {" "}
-                      <CountUp start={0} separator="," end={latest.cases} />
+                      <CountUp
+                        start={0}
+                        separator=","
+                        duration={5}
+                        end={latest.cases}
+                      />
                     </strong>
                   </Typography>
                 </CardContent>
@@ -130,7 +135,12 @@ export default function Covid() {
                     <br /> The Total Number of Deaths is:
                     <strong style={{ color: "red" }}>
                       {" "}
-                      <CountUp start={0} separator="," end={latest.deaths} />
+                      <CountUp
+                        start={0}
+                        separator=","
+                        duration={5}
+                        end={latest.deaths}
+                      />
                     </strong>
                   </Typography>
                 </CardContent>
@@ -166,7 +176,12 @@ export default function Covid() {
                     The Total Number of Recovered is:
                     <strong style={{ color: "red" }}>
                       {" "}
-                      <CountUp start={0} separator="," end={latest.recovered} />
+                      <CountUp
+                        start={0}
+                        separator=","
+                        duration={5}
+                        end={latest.recovered}
+                      />
                     </strong>
                   </Typography>
                 </CardContent>

@@ -11,6 +11,7 @@ import { red } from "@material-ui/core/colors";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Grid from "@material-ui/core/Grid";
 import axios from "axios";
+import CountUp from "react-countup";
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -52,6 +53,10 @@ export default function Covid() {
 
   let today = new Date(latest.updated).toString();
 
+  if (!latest.cases) {
+    return "Loading...";
+  }
+
   return (
     <Grid container className={classes.root} spacing={2}>
       {latest !== null && loading !== true ? (
@@ -86,7 +91,10 @@ export default function Covid() {
                     The coronavirus COVID-19 is affecting 199 countries and
                     territories around the world. <br />
                     The Total Number of Cases is:
-                    <strong style={{ color: "red" }}> {latest.cases}</strong>
+                    <strong style={{ color: "red" }}>
+                      {" "}
+                      <CountUp start={0} separator="," end={latest.cases} />
+                    </strong>
                   </Typography>
                 </CardContent>
               </Card>
@@ -120,7 +128,10 @@ export default function Covid() {
                     The COVID-19 outbreak is an unprecedented global public
                     health challenge.
                     <br /> The Total Number of Deaths is:
-                    <strong style={{ color: "red" }}> {latest.deaths}</strong>
+                    <strong style={{ color: "red" }}>
+                      {" "}
+                      <CountUp start={0} separator="," end={latest.deaths} />
+                    </strong>
                   </Typography>
                 </CardContent>
               </Card>
@@ -155,7 +166,7 @@ export default function Covid() {
                     The Total Number of Recovered is:
                     <strong style={{ color: "red" }}>
                       {" "}
-                      {latest.recovered}
+                      <CountUp start={0} separator="," end={latest.recovered} />
                     </strong>
                   </Typography>
                 </CardContent>

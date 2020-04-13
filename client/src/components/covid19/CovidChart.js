@@ -15,8 +15,8 @@ import { Bar, Line } from "react-chartjs-2";
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    height: "30em",
-    width: "40em",
+    height: "25em",
+    width: "45em",
   },
   media: {
     height: 0,

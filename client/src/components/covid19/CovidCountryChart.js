@@ -15,11 +15,13 @@ import { Bar, Line } from "react-chartjs-2";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import { NativeSelect } from "@material-ui/core";
+import Container from "@material-ui/core/Container";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    height: "27em",
-    width: "40em",
+    height: "25em",
+    width: "45em",
   },
   media: {
     height: 0,
@@ -104,44 +106,35 @@ export default function CovidCountryChart() {
   ) : null;
 
   return (
-    <>
-      <Grid container className={classes.root} spacing={2}>
-        {countryData !== null && loading !== true ? (
-          <Grid item xs={12}>
-            <Grid container justify="center" spacing={spacing}>
-              <Grid item>
-                <FormControl>
-                  <NativeSelect onChange={handleChange} style={{ width: 120 }}>
-                    <option value="global">Enter Country</option>
-                    {countryData.map((country, i) => (
-                      <option key={i} value={country.name}>
-                        {country.name}{" "}
-                      </option>
-                    ))}
-                  </NativeSelect>
-                </FormControl>
-              </Grid>
+    <Grid container className={classes.root} spacing={2}>
+      {countryInfo !== null && loading !== true ? (
+        <Grid item xs={12}>
+          <Grid container justify="center" spacing={spacing}>
+            <Grid item>
+              <Card className={classes.card}>
+                <Container style={{ textAlign: "center" }}>
+                  <FormControl>
+                    <NativeSelect
+                      onChange={handleChange}
+                      style={{ width: 175 }}
+                    >
+                      <option value="global">Select Country</option>
+                      {countryData.map((country, i) => (
+                        <option key={i} value={country.name}>
+                          {country.name}{" "}
+                        </option>
+                      ))}
+                    </NativeSelect>
+                  </FormControl>
+                </Container>
+                <CardContent>{barChart}</CardContent>
+              </Card>
             </Grid>
           </Grid>
-        ) : (
-          <div>Loading...</div>
-        )}
-      </Grid>
-      <Grid container className={classes.root} spacing={2}>
-        {countryInfo !== null && loading !== true ? (
-          <Grid item xs={12}>
-            <Grid container justify="center" spacing={spacing}>
-              <Grid item>
-                <Card className={classes.card}>
-                  <CardContent>{barChart}</CardContent>
-                </Card>
-              </Grid>
-            </Grid>
-          </Grid>
-        ) : (
-          <div>Loading...</div>
-        )}
-      </Grid>
-    </>
+        </Grid>
+      ) : (
+        <div>Loading...</div>
+      )}
+    </Grid>
   );
 }

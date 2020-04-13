@@ -8,6 +8,7 @@ import Countries from "../covid19/Countries";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import CovidMap from "./../covid19/CovidMap";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -63,6 +64,12 @@ const Covid19 = () => {
         >
           Country Update
         </Typography>
+      </Grid>
+      <br />
+      <Grid container justify="center">
+        <Grid item>
+          <CovidMap />
+        </Grid>
       </Grid>
       <br />
       <Grid container justify="center">

@@ -15,8 +15,8 @@ import CountUp from "react-countup";
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    height: "27em",
-    width: "25em",
+    height: "30em",
+    width: "30em",
   },
   media: {
     height: 0,
@@ -32,14 +32,14 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Covid() {
   const classes = useStyles();
-  const [spacing, setSpacing] = useState(2);
+  const [spacing] = useState(2);
   const [latest, setLatest] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const getLatest = async () => {
     try {
       const res = await axios
-        .get("https://corona.lmao.ninja/all")
+        .get("https://covid19.mathdro.id/api")
         .then((res) => setLatest(res.data))
         .then(setLoading(false));
     } catch (err) {
@@ -51,9 +51,9 @@ export default function Covid() {
     getLatest();
   }, []);
 
-  let today = new Date(latest.updated).toString();
+  let today = new Date(latest.lastUpdate).toString();
 
-  if (!latest.cases) {
+  if (!latest.confirmed) {
     return "Loading...";
   }
 
@@ -97,7 +97,7 @@ export default function Covid() {
                         start={0}
                         separator=","
                         duration={5}
-                        end={latest.cases}
+                        end={latest.confirmed.value}
                       />
                     </strong>
                   </Typography>
@@ -139,7 +139,7 @@ export default function Covid() {
                         start={0}
                         separator=","
                         duration={5}
-                        end={latest.deaths}
+                        end={latest.deaths.value}
                       />
                     </strong>
                   </Typography>
@@ -180,7 +180,7 @@ export default function Covid() {
                         start={0}
                         separator=","
                         duration={5}
-                        end={latest.recovered}
+                        end={latest.recovered.value}
                       />
                     </strong>
                   </Typography>

@@ -15,20 +15,20 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import TextField from "@material-ui/core/TextField";
 import Container from "@material-ui/core/Container";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   card: {
     height: "30em",
     width: "30em",
-    margin: 4
+    margin: 4,
   },
   media: {
-    height: 150
+    height: 150,
   },
   root: {
     margin: "2.5em",
     width: "100%",
-    textAlign: "center"
-  }
+    textAlign: "center",
+  },
 }));
 
 export default function Countries() {
@@ -39,15 +39,15 @@ export default function Countries() {
   useEffect(() => {
     axios
       .get("https://corona.lmao.ninja/countries")
-      .then(res => {
+      .then((res) => {
         setResults(res.data);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }, []);
 
-  const filterCountries = results.filter(item => {
+  const filterCountries = results.filter((item) => {
     return searchCountries !== ""
       ? item.country.includes(searchCountries)
       : item;
@@ -61,7 +61,7 @@ export default function Countries() {
             style={{ width: "90%" }}
             id="standard-basic"
             label="Country Search"
-            onChange={e => setsearchCountries(e.target.value)}
+            onChange={(e) => setsearchCountries(e.target.value)}
           />
         </form>
       </Container>
@@ -78,7 +78,7 @@ export default function Countries() {
                 />
                 <CardHeader title={result.country} />
                 <CardContent
-                  style={{ textAlign: "center", fontFamily: "monseratt" }}
+                  style={{ textAlign: "center", fontFamily: "Roboto" }}
                 >
                   <Typography>
                     Total Cases:{" "}

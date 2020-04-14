@@ -18,7 +18,6 @@ import GoogleMapReact from "google-map-react";
 import CountUp from "react-countup";
 
 require("dotenv").config();
-// mapboxApiAccessToken={process.env.REACT_APP_GOOGLEMAP_TOKEN}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -68,7 +67,7 @@ export default function CovidMap() {
     <Grid container className={classes.root}>
       <GoogleMapReact
         bootstrapURLKeys={{
-          key: "",
+          key: process.env.REACT_APP_GOOGLEMAP_TOKEN,
         }}
         defaultCenter={{ lat: 20, lng: -30 }}
         defaultZoom={2}

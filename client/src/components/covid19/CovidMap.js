@@ -44,7 +44,7 @@ export default function CovidMap() {
           textAlign: "center",
         }}
       >
-        <img height="10px" src={data.countryInfo.flag} alt="" />
+        <img height="25px" src={data.countryInfo.flag} alt="" />
         <br />
         <CountUp start={0} separator="," duration={5} end={data.cases} />
       </div>

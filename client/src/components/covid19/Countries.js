@@ -38,7 +38,7 @@ export default function Countries() {
 
   useEffect(() => {
     axios
-      .get("https://corona.lmao.ninja/countries")
+      .get("https://corona.lmao.ninja/v2/countries")
       .then((res) => {
         setResults(res.data);
       })

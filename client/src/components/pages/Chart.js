@@ -6,6 +6,7 @@ import PieChart from "../chart/PieChart";
 import DoughnutChart from "../chart/DoughnutChart";
 import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
+import ChartForm from "../chart/ChartForm";
 
 export default function Chart() {
   return (
@@ -27,6 +28,13 @@ export default function Chart() {
             >
               Chart Library
             </Typography>
+          </Grid>
+          <Grid
+            style={{ marginBottom: "1em", marginTop: "1em" }}
+            container
+            justify="center"
+          >
+            <ChartForm />
           </Grid>
           <Grid item xs={3} style={{ margin: "1em" }}>
             <Card>

@@ -12,20 +12,23 @@ Content-Type: application/json
 
 {
 "title": "title4",
-"description": "getting there"
+"description": "full lineup",
+"labels": ["mon", "tues", "wed"],
+"colors": ["red", "yellow", "blue"],
+"numbers": [1, 2, 3]
 }
 
 ###
 
-PATCH http://localhost:4000/charts/5e9b78a94543f623f01a8e87
+PATCH http://localhost:4000/charts/5e9b80801000632e8cb8f0bb
 Content-Type: application/json
 
 { 
-   "description": "lets see if this works."
+   "title": "title5"
 }
 
 ###
 
-DELETE http://localhost:4000/charts/5e9b786e4543f623f01a8e86
+DELETE http://localhost:4000/charts/5e9b7b483aed432fc4e57bb7
 
 ###

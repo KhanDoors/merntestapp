@@ -13,10 +13,10 @@ mongoose
   .connect(uri, {
     useNewUrlParser: true,
     useCreateIndex: true,
-    useFindAndModify: false
+    useFindAndModify: false,
   })
   .then(() => console.log("Mongo Connected"))
-  .catch(err => console.log(err));
+  .catch((err) => console.log(err));
 
 app.get("/", (req, res) => {
   res.status(200).json({ message: "Hello from the server!", app: "MERN Test" });
@@ -30,6 +30,7 @@ const exercisesRouter = require("./routes/exercises");
 const usersRouter = require("./routes/users");
 const mapLogEntryRouter = require("./routes/mapLogEntry");
 const uploadRouter = require("./routes/upload");
+const chartRouter = require("./routes/charts");
 
 app.use("/uploads", express.static("uploads"));
 
@@ -37,6 +38,7 @@ app.use("/users", usersRouter);
 app.use("/exercises", exercisesRouter);
 app.use("/maplogentry", mapLogEntryRouter);
 app.use("/upload", uploadRouter);
+app.use("/charts", chartRouter);
 
 const PORT = process.env.PORT || 4000;
 
